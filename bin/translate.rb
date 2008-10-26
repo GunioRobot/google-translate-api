@@ -18,6 +18,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require File.dirname(__FILE__) + "/google_translate"
+require File.dirname(__FILE__) + "/../lib/google_translate"
 
 puts GoogleTranslate.new(ARGV[0],ARGV[1],ARGV[2]).translate

@@ -7,7 +7,7 @@ The aim of this implementation is create a simple command-line for translate qui
 ## How I use it
 I created a alias for my script, like that, in my .bash_profile (I'm using a Mac OS X):
 
-	alias t='ruby /Users/dookie/Projects/Experiencies/Ruby/translate/translate.rb'
+	alias t='ruby /Users/dookie/Projects/Experiencies/Ruby/translate/bin/translate.rb'
 	
 And, to execute the translate:
 

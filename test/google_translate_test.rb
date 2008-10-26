@@ -1,5 +1,5 @@
 require 'test/unit'
-require File.dirname(__FILE__) + '/../google_translate'
+require File.dirname(__FILE__) + '/../lib/google_translate'
 
 class GoogleTranslateTest < Test::Unit::TestCase
   def setup

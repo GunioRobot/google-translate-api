@@ -1,10 +1,10 @@
 require 'test/unit'
-require File.dirname(__FILE__) + '/../translate'
+require File.dirname(__FILE__) + '/../bin/translate'
 
 class GoogleTranslateTest < Test::Unit::TestCase
   
   def setup
-    @translate = File.dirname(__FILE__) + '/../translate.rb'
+    @translate = File.dirname(__FILE__) + '/../bin/translate.rb'
   end
   
   def test_trying_to_translate
