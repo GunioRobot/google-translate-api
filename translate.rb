@@ -20,4 +20,4 @@
 
 require File.dirname(__FILE__) + "/google_translate"
 
-puts GoogleTranslate.new(ARGV[1],ARGV[2]).translate(ARGV[0])
+puts GoogleTranslate.new(ARGV[0],ARGV[1],ARGV[2]).translate

@@ -8,10 +8,10 @@ class GoogleTranslateTest < Test::Unit::TestCase
   end
   
   def test_trying_to_translate
-    assert_equal("Teste", `#{@translate} Test`.strip!)
+    assert_equal("Teste", `ruby #{@translate} 'Test'`.strip!)
   end
   
   def test_trying_to_translate_from_portuguese_to_english
-    assert_equal("Test", `#{@translate} Teste pt en`.strip!)
+    assert_equal("Test", `ruby #{@translate} 'Teste' 'pt' 'en'`.strip!)
   end
 end
