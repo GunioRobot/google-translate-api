@@ -18,6 +18,14 @@ And, to execute the translate:
 So, the result is:
 
 	Hello world!
+
+## Installing
+In first place, get the source code:
+	`git clone git://github.com/dookie/google-translate-api.git`
+Then run:
+	`ruby bin/install.rb`
+And enjoy:
+	`t 'Olá mundo!' pt de`
 	
 ## Contributing
 You can contribut to this approach, just keep the Licence of it.
