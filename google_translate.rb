@@ -18,7 +18,6 @@
 
 require 'rubygems'
 require 'mechanize'
-require 'unicode'
 
 class GoogleTranslate
   def initialize(sl="en", tl="pt")
