@@ -1,7 +1,7 @@
 # Google Translator API
 
 ## About
-This a example of a API for [Google Translator](http://translate.google.com.br/), created by me (dookie) for personal use.
+This a example of a API for [Google Translate](http://translate.google.com.br/), created by me (dookie) for personal use.
 The aim of this implementation is create a simple command-line for translate quickly anything. It's very helpful for us, programmers, when reading some articles, books, or posts in other languages and we need to translate some word or expression.
 
 ## How I use it
