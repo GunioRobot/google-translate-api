@@ -35,4 +35,4 @@ And enjoy:
 	t 'Olá mundo!' pt de
 
 ## Contributing
-You can contribut to this approach, just keep the Licence of it.
+You can contribut to this approach, just keep the Licence.
