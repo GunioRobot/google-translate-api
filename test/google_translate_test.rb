@@ -23,9 +23,11 @@ class GoogleTranslateTest < Test::Unit::TestCase
     
     @gt.tl = "es"
     assert_equal("Hola mundo", @gt.translate("Olá mundo"))
-    
-    @gt.tl = "ru"
-    assert_equal("Hola mundo", @gt.translate("Olá mundo"))
+  end
+  
+  def test_using_htmlentities
+    @gt.tl = "fr"
+    assert_equal("Je t'aime", @gt.translate("I love you"))
   end
   
   def test_translate_from_string

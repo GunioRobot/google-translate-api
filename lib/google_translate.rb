@@ -22,7 +22,7 @@ require 'net/http'
 require 'json'
 require 'cgi'
 require 'uri'
-
+require 'htmlentities'
 
 class WhatLanguage
   def abbr(text)
@@ -47,7 +47,9 @@ class GoogleTranslate
   def translate(text=nil)
     what_language(text) unless text.nil?
     
-    JSON.parse(request)['responseData']['translatedText']
+    coder = HTMLEntities.new
+    
+    coder.decode(JSON.parse(request)['responseData']['translatedText'])
   end
   
   private
