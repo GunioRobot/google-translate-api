@@ -15,14 +15,22 @@ class GoogleTranslateTest < Test::Unit::TestCase
   end
   
   def test_trying_to_translate_from_english_to_portuguese
-    @gt.sl = "pt"
     @gt.tl = "en"
-    
     assert_equal("Hello world", @gt.translate("Olá mundo"))
+    
+    @gt.tl = "pt"
+    assert_equal("Meninos", @gt.translate("Muchachos"))
+    
+    @gt.tl = "es"
+    assert_equal("Hola mundo", @gt.translate("Olá mundo"))
+    
+    @gt.tl = "ru"
+    assert_equal("Hola mundo", @gt.translate("Olá mundo"))
   end
   
   def test_translate_from_string
-    assert_equal("Hello world", "Olá mundo".to_english)
-    assert_equal("Olá mundo", "Hello world".to_portuguese)
+    assert_equal("Hello world", "Olá mundo".to_en)
+    assert_equal("Olá mundo", "Hello world".to_pt)
+    assert_equal("Hola mundo", "Hello world".to_es)
   end
 end

@@ -17,29 +17,46 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 require 'rubygems'
+require 'whatlanguage'
 require 'net/http'
 require 'json'
 require 'cgi'
 require 'uri'
 
+
+class WhatLanguage
+  def abbr(text)
+    case language(text)
+    when :english; 'en'
+    when :portuguese; 'pt'
+    when :spanish; 'es'
+    end
+  end
+end
+
+
 class GoogleTranslate
+  attr_accessor :text, :tl
   
-  attr_accessor :text, :sl, :tl
-  
-  def initialize(text=nil, sl="en", tl="pt")
-    @sl = sl
+  def initialize(text, tl="pt")
+    what_language(text)  
     @tl = tl
-    @text = text
     @uri = URI.parse("http://ajax.googleapis.com/ajax/services/language/translate")
   end
   
   def translate(text=nil)
-    @text = text unless text.nil?
+    what_language(text) unless text.nil?
     
     JSON.parse(request)['responseData']['translatedText']
   end
   
   private
+  def what_language(text)
+    @wl = WhatLanguage.new(:all)
+    @text = text
+    @sl = @wl.abbr(text)
+  end
+  
   def request
     Net::HTTP.get(@uri.host, "#{@uri.path}?#{params}")
   end
@@ -51,12 +68,13 @@ class GoogleTranslate
   end
 end
 
+
 class String
-  def to_english
-    GoogleTranslate.new(self,'pt','en').translate
-  end
-  
-  def to_portuguese
-    GoogleTranslate.new(self).translate
+  def method_missing(method, *args)
+    if method.to_s =~ /^to_\w{2}$/
+      GoogleTranslate.new(self, method.to_s.match(/^to_(\w{2})$/)[1]).translate
+    else
+      super(method, args)
+    end
   end
 end

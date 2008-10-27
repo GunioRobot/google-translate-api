@@ -11,9 +11,9 @@ I created a alias for my script, like that, in my .bash_profile (I'm using a Mac
 
 And, to execute the translate:
 
-	t [word or expression] [source language] [translate language]
+	t [word or expression] [translate language]
 
-	t 'Olá Mundo!' pt en
+	t 'Olá Mundo!' en
 	
 Then, the result will be:
 
@@ -32,7 +32,7 @@ Then run:
 
 And enjoy:
 
-	t 'Olá mundo!' pt de
+	t 'Olá mundo!' de
 
 ## Contributing
 You can contribut to this approach, just keep the Licence.
