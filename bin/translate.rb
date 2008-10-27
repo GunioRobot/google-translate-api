@@ -20,4 +20,17 @@
 
 require File.dirname(__FILE__) + "/../lib/google_translate"
 
-puts GoogleTranslate.new(ARGV[0],ARGV[1],ARGV[2]).translate
+def response
+  if ARGV[1].eql?('pt') && ARGV[2].eql?('en')
+    ARGV[0].to_english
+  elsif ARGV[1].eql?('en') && ARGV[2].eql?('pt')
+    ARGV[0].to_portuguese
+  else
+    ARGV[1] ||= 'en'
+    ARGV[2] ||= 'pt'
+    
+    GoogleTranslate.new(ARGV[0],ARGV[1],ARGV[2]).translate
+  end
+end
+
+puts response

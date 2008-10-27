@@ -26,9 +26,9 @@ class GoogleTranslate
   
   attr_accessor :text, :sl, :tl
   
-  def initialize(text=nil, sl=nil, tl=nil)
-    @sl = sl || "en"
-    @tl = tl || "pt"
+  def initialize(text=nil, sl="en", tl="pt")
+    @sl = sl
+    @tl = tl
     @text = text
     @uri = URI.parse("http://ajax.googleapis.com/ajax/services/language/translate")
   end
@@ -40,13 +40,23 @@ class GoogleTranslate
   end
   
   private
+  def request
+    Net::HTTP.get(@uri.host, "#{@uri.path}?#{params}")
+  end
+  
   def params
     { :langpair => "#{@sl}|#{@tl}", 
       :q => @text,
       :v => 1.0 }.map { |k,v| "#{k}=#{CGI.escape(v.to_s)}" }.join('&')
   end
+end
+
+class String
+  def to_english
+    GoogleTranslate.new(self,'pt','en').translate
+  end
   
-  def request
-    Net::HTTP.get(@uri.host, "#{@uri.path}?#{params}")
+  def to_portuguese
+    GoogleTranslate.new(self).translate
   end
 end

@@ -20,4 +20,9 @@ class GoogleTranslateTest < Test::Unit::TestCase
     
     assert_equal("Hello world", @gt.translate("Olá mundo"))
   end
+  
+  def test_translate_from_string
+    assert_equal("Hello world", "Olá mundo".to_english)
+    assert_equal("Olá mundo", "Hello world".to_portuguese)
+  end
 end
