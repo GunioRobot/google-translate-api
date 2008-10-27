@@ -36,3 +36,13 @@ And enjoy:
 
 ## Contributing
 You can contribut to this approach, just keep the Licence.
+
+## Troubleshoot
+
+### Checking the GEMS
+
+* whatlanguage
+* json
+* htmlentities
+
+	sudo gem install whatlanguage json htmlentities
