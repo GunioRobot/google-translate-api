@@ -45,4 +45,5 @@ You can contribut to this approach, just keep the Licence.
 * json
 * htmlentities
 
+### Installing
 	sudo gem install whatlanguage json htmlentities
