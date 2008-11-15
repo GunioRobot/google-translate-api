@@ -45,5 +45,8 @@ And enjoy:
 #### Installing
 	sudo gem install whatlanguage json htmlentities
 	
+## TO-DO	
+* Make this lib a Ruby on Rails plugin
+
 ## Contributing
 You can contribute to this approach, just keep the Licence.
